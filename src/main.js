@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VeeValidate, { Validator } from 'vee-validate'
+import moment from 'moment'
 
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -19,6 +20,7 @@ router.beforeEach(async (to, from, next) => {
   const lang = (navigator.language || navigator.userLanguage).replace('-', '_')
   await loadLanguage(lang)
   Validator.localize(lang)
+  moment.locale(lang)
   next()
 })
 

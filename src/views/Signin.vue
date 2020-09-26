@@ -9,8 +9,8 @@
 
       <div class="col-md-12 mt-3">
         <p class="text-center">
-          <a href="javascript:void();" class="facebook btn mybtn">
-            <i class="fab fa-facebook-square"></i> Signup using Facebook
+          <a href="http://localhost:8080/oauth2/authorize/facebook" class="facebook btn mybtn">
+            <i class="fab fa-facebook-square"></i> {{ $t('login.facebook') }}
           </a>
         </p>
       </div>
@@ -24,8 +24,8 @@
 
       <div class="col-md-12 mb-3">
         <p class="text-center">
-          <a href="javascript:void();" class="google btn mybtn">
-            <i class="fab fa-google"></i> Signup using Google
+          <a href="http://localhost:8080/oauth2/authorize/google" class="google btn mybtn">
+            <i class="fab fa-google"></i> {{ $t('login.google') }}
           </a>
         </p>
       </div>
@@ -49,6 +49,9 @@ export default {
     }
   },
   methods: {
+  },
+  mounted () {
+    console.log(this.$route.params)
   }
 }
 </script>

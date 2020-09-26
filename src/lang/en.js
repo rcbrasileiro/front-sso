@@ -1,20 +1,14 @@
 export default {
+  'application-title': 'Front SSO',
   login: {
     title: 'Login',
-    form: {
-      emailLabel: 'Email address',
-      emailPlaceholder: 'Enter email',
-      passwordLabel: 'Password',
-      passwordPlaceholder: 'Enter password',
-      submit: 'Login',
-      errors: {
-        'bad-credentials': 'The email or password are incorrect, try again.'
-      }
-    },
     or: 'or',
-    'signup-link': {
-      text: 'Don\'t have account? {redirection}',
-      redirection: 'Sign up here'
-    }
+    facebook: 'Signup using Facebook',
+    google: 'Signup using Google'
+  },
+  listing: {
+    stateLabel: 'Agreement state:',
+    startDateLabel: 'Start date:',
+    endDateLabel: 'End date:'
   }
 }

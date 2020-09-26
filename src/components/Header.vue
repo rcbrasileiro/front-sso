@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expanded-lg navbar-light bg-light">
-    <router-link class="navbar-brand" to="/">Parc Torre</router-link>
+    <router-link class="navbar-brand" to="/">{{ $t('application-title') }}</router-link>
     <div v-if="isAuthenticated" class="d-flex-inline">
       <span>{{ user.name }}</span>
       <button @click="logout" type="button" class="btn btn-link"><i class="fas fa-sign-out-alt"></i></button>
@@ -17,7 +17,7 @@ import { LOGOUT } from '../store/actions-type'
 export default {
   name: 'Header',
   computed: {
-    ...mapState([ 'user' ]),
+    ...mapState(['user']),
     ...mapGetters({
       isAuthenticated: IS_AUTHENTICATED
     })
