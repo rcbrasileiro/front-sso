@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VeeValidate, { Validator } from 'vee-validate'
 import moment from 'moment'
+import axios from 'axios'
 
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -10,6 +11,7 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
+axios.defaults.baseURL = process.env.VUE_APP_BASE_URL
 
 Vue.use(VeeValidate, {
   events: 'blur',

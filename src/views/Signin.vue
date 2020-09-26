@@ -9,7 +9,7 @@
 
       <div class="col-md-12 mt-3">
         <p class="text-center">
-          <a href="http://localhost:8080/oauth2/authorize/facebook" class="facebook btn mybtn">
+          <a :href="facebookUrl" class="facebook btn mybtn">
             <i class="fab fa-facebook-square"></i> {{ $t('login.facebook') }}
           </a>
         </p>
@@ -24,7 +24,7 @@
 
       <div class="col-md-12 mb-3">
         <p class="text-center">
-          <a href="http://localhost:8080/oauth2/authorize/google" class="google btn mybtn">
+          <a :href="googleUrl" class="google btn mybtn">
             <i class="fab fa-google"></i> {{ $t('login.google') }}
           </a>
         </p>
@@ -35,6 +35,9 @@
 
 <script>
 import Authentication from '../components/AuthenticationTemplate.vue'
+import { mapMutations } from 'vuex'
+import { TOKEN, USER } from '../store/mutations-type'
+import userService from '../services/UserService'
 
 export default {
   name: 'Signin',
@@ -43,15 +46,26 @@ export default {
   },
   data () {
     return {
-      email: '',
-      password: '',
-      invalidUser: false
+      googleUrl: process.env.VUE_APP_GOOGLE_AUTHENTICATION,
+      facebookUrl: process.env.VUE_APP_FACEBOOK_AUTHENTICATION
     }
   },
   methods: {
+    ...mapMutations({
+      setToken: TOKEN,
+      setUser: USER
+    })
   },
-  mounted () {
-    console.log(this.$route.params)
+  async mounted () {
+    const token = this.$route.query.auth_token
+    if (token) {
+      this.setToken(token)
+      const user = await userService.getUser()
+      this.setUser(user)
+      this.$router.push({
+        name: 'Home'
+      })
+    }
   }
 }
 </script>

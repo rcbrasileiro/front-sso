@@ -45,7 +45,9 @@ export default {
     }
   },
   async mounted () {
+    debugger
     this.items = await portalTransparenciaService.listAcordoLeniencia()
+    debugger
   }
 }
 </script>
