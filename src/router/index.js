@@ -35,6 +35,11 @@ const routes = [
     name: 'Signin',
     component: Signin,
     beforeEnter: isNotAuthenticated
+  },
+  {
+    path: '/error',
+    name: 'Error',
+    component: Error
   }
 ]
 

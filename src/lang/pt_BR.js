@@ -10,5 +10,10 @@ export default {
     stateLabel: 'Status do acordo:',
     startDateLabel: 'Data de inicio:',
     endDateLabel: 'Data de fim:'
+  },
+  error: {
+    title: 'Oops!',
+    description: 'Não foi possível completar sua requisição',
+    sugestion: 'Tente acessar novamente após alguns minutos.'
   }
 }

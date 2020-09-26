@@ -10,5 +10,10 @@ export default {
     stateLabel: 'Agreement state:',
     startDateLabel: 'Start date:',
     endDateLabel: 'End date:'
+  },
+  error: {
+    title: 'Oops!',
+    description: 'We were unable to complete your request',
+    sugestion: 'Try to sign in again after a few minutes.'
   }
 }
