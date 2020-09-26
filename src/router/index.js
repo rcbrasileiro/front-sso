@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Signin from '../views/Signin.vue'
 import Listagem from '../views/Listagem.vue'
+import Error from '../views/Error.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
